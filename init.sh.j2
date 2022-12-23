@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+find . -type f -name '.gitkeep' -print -delete
+
+git init .
+git remote add origin git@github.com:cosandr/{{ role_name }}.git
+
+rm -fv "$0"
+
+git add .

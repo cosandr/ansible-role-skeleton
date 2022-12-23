@@ -1,7 +1,0 @@
----
-# role: {{ role_name }}
-# file: tasks/main.yml
-
-- name: "Check if {{ role_name }} is enabled"
-  include_tasks: tasks.yml
-  when: {{ role_name | replace('ansible-role-', '') | replace('-','_') }}_role_enabled | bool

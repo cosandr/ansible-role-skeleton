@@ -1,6 +1,4 @@
 ---
-# role: {{ role_name }}
-# file: .yamllint.yml
 
 extends: default
 
@@ -39,5 +37,3 @@ ignore: |
   .github/
   .tox/
   .vscode/
-  .travis.yml
-  .travis.*.yml
