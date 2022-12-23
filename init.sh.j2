@@ -1,10 +1,14 @@
 #!/usr/bin/env sh
 
-find . -type f -name '.gitkeep' -print -delete
+set -e
 
-git init .
-git remote add origin git@github.com:cosandr/{{ role_name }}.git
+base_dir="$(dirname "$0")"
+
+find "$base_dir" -type f \( -name '.gitkeep' -o -name '.git' \) -print -delete
+
+git -C "$base_dir" init
+git -C "$base_dir" remote add origin git@github.com:cosandr/{{ role_name | basename }}.git
 
 rm -fv "$0"
 
-git add .
+git -C "$base_dir" add .

@@ -1,8 +1,8 @@
-# {{ role_name }}
+# {{ role_name | basename }}
 
-![GitHub](https://img.shields.io/github/license/cosandr/{{ role_name }}) ![GitHub last commit](https://img.shields.io/github/last-commit/cosandr/{{ role_name }}) ![GitHub issues](https://img.shields.io/github/issues-raw/cosandr/{{ role_name }})
+![GitHub](https://img.shields.io/github/license/cosandr/{{ role_name | basename }}) ![GitHub last commit](https://img.shields.io/github/last-commit/cosandr/{{ role_name | basename }}) ![GitHub issues](https://img.shields.io/github/issues-raw/cosandr/{{ role_name | basename }})
 
-**Ansible role for setting up {{ role_name|replace('ansible-role-', '') }}.**
+**Ansible role for setting up {{ role_name | basename | replace('ansible-role-', '') }}.**
 
 ## Supported Platforms
 
@@ -37,7 +37,7 @@ None.
   become: true
   gather_facts: true
   roles:
-    - role: {{ role_name }}
+    - role: {{ role_name | basename }}
 ```
 
 ## Author

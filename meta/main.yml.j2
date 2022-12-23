@@ -1,12 +1,12 @@
 ---
 
 galaxy_info:
-  role_name: {{ role_name|replace('ansible-role-', '') }}
+  role_name: {{ role_name | basename | replace('ansible-role-', '') }}
   author: Andrei Costescu
   namespace: cosandr
-  description: Ansible role for setting up {{ role_name|replace('ansible-role-', '') }}.
+  description: Ansible role for setting up {{ role_name | basename | replace('ansible-role-', '') }}.
 
-  issue_tracker_url: https://github.com/cosandr/{{ role_name }}/issues
+  issue_tracker_url: https://github.com/cosandr/{{ role_name | basename }}/issues
 
   license: MIT
 
