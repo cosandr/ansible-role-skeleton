@@ -11,7 +11,7 @@ lint: |
   yamllint .
   ansible-lint
 platforms:
-  - name: default-{{ role_name | replace('ansible-role-', '') }}
+  - name: default-{{ role_name | basename | replace('ansible-role-', '') }}
     image: "${uns:-jam82}/molecule-${img:-debian}:${tag:-latest}"
     command: ""
     pre_build_image: true

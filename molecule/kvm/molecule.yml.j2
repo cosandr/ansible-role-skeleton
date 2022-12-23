@@ -14,15 +14,15 @@ lint: |
   yamllint .
   ansible-lint
 platforms:
-  - name: rockylinux-{{ role_name | replace('ansible-role-', '') }}
+  - name: rockylinux-{{ role_name | basename | replace('ansible-role-', '') }}
     box: "rockylinux/8"
     memory: 2048
     cpus: 2
-  - name: rockylinux-{{ role_name | replace('ansible-role-', '') }}
+  - name: rockylinux-{{ role_name | basename | replace('ansible-role-', '') }}
     box: "rockylinux/9"
     memory: 2048
     cpus: 2
-  - name: fedora-{{ role_name | replace('ansible-role-', '') }}
+  - name: fedora-{{ role_name | basename | replace('ansible-role-', '') }}
     box: "fedora/37-cloud-base"
     memory: 2048
     cpus: 2
