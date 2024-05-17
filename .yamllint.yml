@@ -15,8 +15,12 @@ rules:
   commas:
     max-spaces-after: 1
     level: error
-  comments: enable
-  comments-indentation: enable
+  comments:
+    min-spaces-from-content: 1
+  octal-values:
+    forbid-implicit-octal: true
+    forbid-explicit-octal: true
+  comments-indentation: false
   document-start: enable
   empty-lines:
     max: 3
