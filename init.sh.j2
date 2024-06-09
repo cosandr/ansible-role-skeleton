@@ -2,13 +2,18 @@
 
 set -e
 
+GIT_INIT="${GIT_INIT:-1}"
 base_dir="$(dirname "$0")"
 
 find "$base_dir" -type f \( -name '.gitkeep' -o -name '.git' \) -print -delete
 
-git -C "$base_dir" init
-git -C "$base_dir" remote add origin git@github.com:cosandr/{{ role_name | basename }}.git
-
+if [[ $GIT_INIT -eq 1 ]]; then
+    git -C "$base_dir" init
+    git -C "$base_dir" remote add origin git@github.com:cosandr/{{ role_name | basename }}.git
+else
+    rm -rfv "$base_dir"/.github
+    rm -fv "$base_dir"/{LICENSE,.gitlab-ci.yml}
+fi
 rm -fv "$0"
 
 git -C "$base_dir" add .
